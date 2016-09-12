@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/top"></include>
+    <TextView
+        android:id="@+id/aboutus"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:lineSpacingExtra="3dp"
+        android:lineSpacingMultiplier="2"
+        android:scrollbars="vertical"
+        android:text="APP名称：会计视频教学\n
+会计从入门到精通视频教学。\n
+免责申明：\n
+1、APP中所提供之视频均为网上搜集或网友制作之剪辑混编作品，只供网友试看及相互间交流视频制作技术之用，不涉及任何商业盈利目的，如有侵权请发邮件到364630279#qq.com我们会及时处理\n
+2、会计视频教学转载其他媒体内容是为传播更多的信息，此类内容不代表本APP观点，本APP不承担此类内容侵权行为的连带责任。如其他媒体、网站或个人转载使用，必须保留原地址注明的“内容来源”，并自负法律责任。\n
+3、会计视频教学不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该等外部链接指向的不由会计视频教学实际控制的任何的内容，会计视频教学不承担任何责任。\n
+4、会计视频教学所刊载的所有资料及图表仅供参考使用,用户明确同意其使用会计视频教学网络服务所存在的风险将完全由其自己承担,本APP对用户不承担任何责任。\n
+"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        android:textStyle="normal"
+
+        />
+
+
+</LinearLayout>
