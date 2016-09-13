@@ -7,12 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.qq.e.ads.banner.ADSize;
+import com.qq.e.ads.banner.AbstractBannerADListener;
+import com.qq.e.ads.banner.BannerView;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.umeng.analytics.MobclickAgent;
 
@@ -24,7 +28,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
-
+    BannerView bv;
+    ViewGroup bannerContainer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,10 +71,31 @@ public class MainActivity extends AppCompatActivity {
                 //FruitList.this.finish();
             }
         });
+        bannerContainer = (ViewGroup) findViewById(R.id.bannerContainer);
+        this.initBanner();
+        this.bv.loadAD();
 
     }
 
 
+    private void initBanner() {
+        this.bv = new BannerView(this, ADSize.BANNER, Constants.APPID, Constants.BannerPosID);
+        bv.setRefresh(30);
+
+        bv.setADListener(new AbstractBannerADListener() {
+            @Override
+            public void onNoAD(int arg0) {
+                Log.i("AD_DEMO", "BannerNoAD，eCode=" + arg0);
+            }
+
+            @Override
+            public void onADReceiv() {
+                Log.i("AD_DEMO", "ONBannerReceive");
+            }
+        });
+
+        bannerContainer.addView(this.bv);
+    }
     private void initWindow() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorNavBar));

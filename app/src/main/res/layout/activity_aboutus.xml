@@ -4,6 +4,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <include layout="@layout/top"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f3f3f3"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:onClick="myClickMethod"
+        android:id="@+id/recommend_app"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+
+            android:gravity="center_vertical"
+            android:text="精品应用推荐"
+            android:textColor="#333333"
+
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text=">"
+            android:textSize="16dp"
+
+            />
+    </LinearLayout>
     <TextView
         android:id="@+id/aboutus"
         android:layout_width="match_parent"

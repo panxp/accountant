@@ -104,7 +104,7 @@ public class ListActivity extends AppCompatActivity implements Callback<ArrayLis
             }
         });
 
-        //bannerContainer.addView(this.bv);
+        bannerContainer.addView(this.bv);
     }
 
 
@@ -156,8 +156,7 @@ public class ListActivity extends AppCompatActivity implements Callback<ArrayLis
         loading.setVisibility(View.GONE);
         listView.setAdapter(adapter);
 
-
-        //showAD();
+        showAD();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

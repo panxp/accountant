@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.qq.e.ads.appwall.APPWall;
@@ -14,7 +15,7 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.umeng.analytics.MobclickAgent;
 
 public class AboutusActivity extends AppCompatActivity {
-
+    LinearLayout recommendApp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,16 @@ public class AboutusActivity extends AppCompatActivity {
         initWindow();
         TextView tv = (TextView) findViewById(R.id.top_title);
         tv.setText("关于我们");
+        recommendApp = (LinearLayout) findViewById(R.id.recommend_app);
+        recommendApp.setOnClickListener(new View.OnClickListener() {
+            //为找到的button设置监听
+            @Override
+            //重写onClick函数
+            public void onClick(View v) {
+                myClickMethod(v);
+            }
+        });
+
     }
     public void onResume() {
         super.onResume();
@@ -37,7 +48,6 @@ public class AboutusActivity extends AppCompatActivity {
         MobclickAgent.onPause(this);
     }
 
-    /**
     public void myClickMethod(View v) {
         switch (v.getId()) {
             case R.id.recommend_app:
@@ -49,7 +59,7 @@ public class AboutusActivity extends AppCompatActivity {
                 break;
         }
     }
-*/
+
     private void initWindow() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorNavBar));
