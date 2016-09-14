@@ -55,9 +55,11 @@ public class CategoryActivity extends AppCompatActivity {
                 new String[]{"title", "img"},
                 new int[]{R.id.title, R.id.img}
         );
+        bannerContainer = (ViewGroup) findViewById(R.id.bannerContainer);
         listView.setAdapter(adapter);
         initBanner();
-        showAD();
+        this.bv.loadAD();
+        //showAD();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

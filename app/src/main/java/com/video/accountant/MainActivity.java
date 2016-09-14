@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 new String[]{"title", "img"},
                 new int[]{R.id.title, R.id.img}
         );
+
+        bannerContainer = (ViewGroup) findViewById(R.id.bannerContainer2);
+
+
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -71,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 //FruitList.this.finish();
             }
         });
-        bannerContainer = (ViewGroup) findViewById(R.id.bannerContainer);
         this.initBanner();
+
         this.bv.loadAD();
 
     }
@@ -87,13 +91,17 @@ public class MainActivity extends AppCompatActivity {
             public void onNoAD(int arg0) {
                 Log.i("AD_DEMO", "BannerNoAD，eCode=" + arg0);
             }
-
             @Override
             public void onADReceiv() {
                 Log.i("AD_DEMO", "ONBannerReceive");
             }
         });
 
+        if(this.bv==null){
+            Log.i("llll", "nulll");
+        }else{
+            Log.i("llll", "ol");
+        }
         bannerContainer.addView(this.bv);
     }
     private void initWindow() {

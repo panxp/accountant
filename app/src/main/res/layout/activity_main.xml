@@ -8,19 +8,16 @@
 
     <include layout="@layout/top"></include>
 
-
-    <FrameLayout
-        android:id="@+id/bannerContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"></FrameLayout>
-
     <ListView
         android:id="@+id/category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
     </ListView>
-
+    <FrameLayout
+        android:id="@+id/bannerContainer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"></FrameLayout>
 </LinearLayout>
